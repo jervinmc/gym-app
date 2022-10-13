@@ -146,8 +146,8 @@ class _ProfileState extends State<Profile> {
                               "https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwc2lsaG91ZXR0ZXxlbnwwfHwwfHw%3D&w=1000&q=80"),
                           backgroundColor: Colors.transparent,
                         ),
-                        Text('Russel Mercada'),
-                        Text('rampermervago@gmail.com'),
+                        Text('Juan Dela Cruz'),
+                        Text('juandelacruz@email.com'),
                           Padding(padding: EdgeInsets.only(top:30)),
                       Row(
                         mainAxisAlignment:MainAxisAlignment.spaceBetween,
