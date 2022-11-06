@@ -39,7 +39,7 @@ class _SignUpState extends State<SignUp> {
     }
   }
 
-  static String BASE_URL = '' + Global.url + '/users/';
+  static String BASE_URL = '' + Global.url + '/signup/';
   bool _load = false;
   void notify(DialogType type, title, desc) {
     AwesomeDialog(
@@ -112,7 +112,7 @@ class _SignUpState extends State<SignUp> {
     //   _load = true;
     // });
     final response = await http.post(Uri.parse(BASE_URL),headers: {"Content-Type": "application/json"},body:json.encode(params));
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       setState(() {
         _load = false;
       });

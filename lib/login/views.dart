@@ -17,7 +17,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  static String BASE_URL = ''+Global.url+'/login/';
+  static String BASE_URL = ''+Global.url+'/auth/login/';
   bool _load = false;
   bool isReveal =true;
   void pageValidation()async {
@@ -57,7 +57,8 @@ class _LoginState extends State<Login> {
       });
       final response = await http.post(Uri.parse(BASE_URL),headers: {"Content-Type": "application/json"},body:json.encode(params));
       String jsonsDataString = response.body.toString();
-      if(response.statusCode==404){
+      if(response.statusCode==401){
+        print('yes');
          notify(DialogType.ERROR, 'Wrong Credentials', "Please try again.");
        setState(() {
          _load=false;
@@ -65,35 +66,9 @@ class _LoginState extends State<Login> {
         return;
       }
       final _data = jsonDecode(jsonsDataString);
-      if(_data!='no_data'){
-        // if(_data[0]['status']!='Activated'){
-        //   notify(DialogType.ERROR, 'Not yet activate', "Please check your email to verify this account.");
-        //    setState(() {
-        //      _load=false;
-        //   });
-        //   return;
-        
-        // }
-           prefs.setInt("_id",_data[0]['id']);
-           prefs.setString("permanent_address",_data[0]['permanent_address']);
-           prefs.setString("fullname",_data[0]['fullname']);
-           if(_data[0]['user_type']=='Finder'){
-            Get.toNamed('/finder');
-           }
-           else if(_data[0]['user_type']=='Donor'){
-              Get.toNamed('/home');
-           }
-           else{
-              Get.toNamed('/homeInstitution');
-           }
-         
-      }
-      else{
-        notify(DialogType.ERROR, 'Wrong Credentials', "Please try again.");
-       setState(() {
-         _load=false;
-       });
-      }
+ 
+    Get.toNamed('/home');
+
       
   }
   TextEditingController _email = new TextEditingController();
@@ -117,7 +92,7 @@ class _LoginState extends State<Login> {
                   padding: EdgeInsets.all(20),
                   child: Column(
                       children: <Widget>[
-                        Image.asset("assets/logo.jpeg",height: 200,),
+                        Image.network("https://img.freepik.com/premium-vector/illustration-dumbbell-gym-fitness-barbel-fitness-with-dumbbell-concept-letter-h-logo-design_629524-748.jpg?w=1060",height: 200,),
                         Container(
                           padding: EdgeInsets.only(top: 20),
                           child: TextField(
@@ -175,12 +150,12 @@ class _LoginState extends State<Login> {
                                         fillColor: Colors.white70),
                                   )
                         ),
-                        InkWell(
-                          onTap: (){
-                            Get.toNamed('/reset_password');
-                          },
-                          child: Text('Forgot Password?'),
-                        ),
+                        // InkWell(
+                        //   onTap: (){
+                        //     Get.toNamed('/reset_password');
+                        //   },
+                        //   child: Text('Forgot Password?'),
+                        // ),
                         Container(
                           padding: EdgeInsets.only(top: 15),
                           width: 250,
@@ -193,8 +168,8 @@ class _LoginState extends State<Login> {
                                         ))),
                             child: Text('Login'),
                             onPressed: () {
-                              Get.toNamed('/home');
-                            // Login();
+                              // Get.toNamed('/home');
+                            Login();
                             },
                           ),
                         ),

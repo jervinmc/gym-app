@@ -1,5 +1,7 @@
 
+import 'package:bloodapp/details/views.dart';
 import 'package:bloodapp/donation_list/views.dart';
+import 'package:bloodapp/exercises/views.dart';
 import 'package:bloodapp/home/views.dart';
 import 'package:bloodapp/homeFinder/views.dart';
 import 'package:bloodapp/homeInstitution/views.dart';
@@ -41,6 +43,8 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/homeInstitution", page:()=>Institution()),
              GetPage(name: "/donationList", page:()=>DonationList()),
            GetPage(name: "/scanner", page:()=>qrCodeScanner()),
+            GetPage(name: "/exercise", page:()=>Exercise()),
+            GetPage(name: "/details", page:()=>Details()),
            
       //   GetPage(name: "/home", page:()=>Home()),
       //   GetPage(name: "/details", page:()=>Details()),
