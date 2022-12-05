@@ -66,7 +66,8 @@ class _LoginState extends State<Login> {
         return;
       }
       final _data = jsonDecode(jsonsDataString);
- 
+      print(_data);
+    // prefs.setInt('_id', _data[0]['id']);
     Get.toNamed('/home');
 
       

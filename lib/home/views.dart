@@ -128,6 +128,21 @@ class _HomeState extends State<Home> {
                     ..show();
                 },
               ),
+              Divider(),
+              ListTile(
+                trailing: Icon(Icons.sell),
+                title: const Text('Tools and Products'),
+                onTap: () {
+                  Get.toNamed('/product');
+                },
+              ),
+              ListTile(
+                trailing: Icon(Icons.sell),
+                title: const Text('Appointment'),
+                onTap: () {
+                  Get.toNamed('/appointment');
+                },
+              ),
             ],
           ),
         ),

@@ -1,4 +1,5 @@
 
+import 'package:bloodapp/appointment/views.dart';
 import 'package:bloodapp/details/views.dart';
 import 'package:bloodapp/donation_list/views.dart';
 import 'package:bloodapp/exercises/views.dart';
@@ -7,6 +8,7 @@ import 'package:bloodapp/homeFinder/views.dart';
 import 'package:bloodapp/homeInstitution/views.dart';
 import 'package:bloodapp/login/views.dart';
 import 'package:bloodapp/maps/views.dart';
+import 'package:bloodapp/products/views.dart';
 import 'package:bloodapp/profile/views.dart';
 import 'package:bloodapp/qrprofile/views.dart';
 import 'package:bloodapp/qrscanner/views.dart';
@@ -17,7 +19,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 void main() async{
- 
   runApp(MyApp());
 }
 
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
            GetPage(name: "/scanner", page:()=>qrCodeScanner()),
             GetPage(name: "/exercise", page:()=>Exercise()),
             GetPage(name: "/details", page:()=>Details()),
-           
+            GetPage(name: "/appointment", page:()=>Appointment()),
+           GetPage(name: "/product", page:()=>Product()),
       //   GetPage(name: "/home", page:()=>Home()),
       //   GetPage(name: "/details", page:()=>Details()),
       //   GetPage(name: "/cart", page:()=>Carts()),

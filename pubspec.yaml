@@ -45,6 +45,7 @@ dependencies:
   pusher_websocket_flutter: ^0.1.1
   intl: ^0.17.0
   googleapis: any
+  date_time_picker: "^2.1.0"
   googleapis_auth: any
   location: ^2.3.5
   google_maps_flutter: ^2.1.3
