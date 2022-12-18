@@ -10,16 +10,16 @@ import 'dart:convert';
 
 import 'package:url_launcher/url_launcher.dart';
 
-class Details extends StatefulWidget {
+class ProductDetails extends StatefulWidget {
   dynamic args = Get.arguments;
 
   @override
-  State<Details> createState() => _DetailsState(args);
+  State<ProductDetails> createState() => _ProductDetailsState(args);
 }
 
-class _DetailsState extends State<Details> {
+class _ProductDetailsState extends State<ProductDetails> {
   List args;
-  _DetailsState(this.args);
+  _ProductDetailsState(this.args);
   void paypalCheckout() async {
     final prefs = await SharedPreferences.getInstance();
     var _id = prefs.getInt("_id");
@@ -128,7 +128,7 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(args[0]),
+          title: Text(args[6]),
           backgroundColor: Color(0xff416ce1),
         ),
         body: Container(
@@ -141,13 +141,13 @@ class _DetailsState extends State<Details> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
-                        image: NetworkImage(args[1]), fit: BoxFit.cover),
+                        image: NetworkImage(args[0]), fit: BoxFit.cover),
                   ),
                   child: Text('')),
               Container(
                   padding: EdgeInsets.only(top: 10),
                   child: Text(
-                    args[0],
+                    args[5],
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   )),
               Container(
@@ -157,40 +157,40 @@ class _DetailsState extends State<Details> {
                       Text(args[2], style: TextStyle(fontSize: 20)),
                     ],
                   )),
-              // Container(
-              //   padding: EdgeInsets.all(15),
-              //   width: 350,
-              //   child: ElevatedButton(
-              //     style: ButtonStyle(
-              //         backgroundColor:
-              //             MaterialStateProperty.all<Color>(Color(0xff222f3e)),
-              //         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              //             RoundedRectangleBorder(
-              //           borderRadius: BorderRadius.circular(18.0),
-              //         ))),
-              //     child: Text('Paypal'),
-              //     onPressed: () {
-              //       paypalCheckout();
-              //     },
-              //   ),
-              // ),
-              //  Container(
-              //   padding: EdgeInsets.all(15),
-              //   width: 350,
-              //   child: ElevatedButton(
-              //     style: ButtonStyle(
-              //         backgroundColor:
-              //             MaterialStateProperty.all<Color>(Color(0xff222f3e)),
-              //         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              //             RoundedRectangleBorder(
-              //           borderRadius: BorderRadius.circular(18.0),
-              //         ))),
-              //     child: Text('Cancel'),
-              //     onPressed: () {
-              //       Get.toNamed('/product');
-              //     },
-              //   ),
-              // ),
+              Container(
+                padding: EdgeInsets.all(15),
+                width: 350,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Color(0xff222f3e)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ))),
+                  child: Text('Paypal'),
+                  onPressed: () {
+                    paypalCheckout();
+                  },
+                ),
+              ),
+               Container(
+                padding: EdgeInsets.all(15),
+                width: 350,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Color(0xff222f3e)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ))),
+                  child: Text('Cancel'),
+                  onPressed: () {
+                    Get.toNamed('/product');
+                  },
+                ),
+              ),
             ],
           ),
         ));

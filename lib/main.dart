@@ -8,6 +8,7 @@ import 'package:bloodapp/homeFinder/views.dart';
 import 'package:bloodapp/homeInstitution/views.dart';
 import 'package:bloodapp/login/views.dart';
 import 'package:bloodapp/maps/views.dart';
+import 'package:bloodapp/product_details/views.dart';
 import 'package:bloodapp/products/views.dart';
 import 'package:bloodapp/profile/views.dart';
 import 'package:bloodapp/qrprofile/views.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
            GetPage(name: "/scanner", page:()=>qrCodeScanner()),
             GetPage(name: "/exercise", page:()=>Exercise()),
             GetPage(name: "/details", page:()=>Details()),
+              GetPage(name: "/product-details", page:()=>ProductDetails()),
             GetPage(name: "/appointment", page:()=>Appointment()),
            GetPage(name: "/product", page:()=>Product()),
       //   GetPage(name: "/home", page:()=>Home()),

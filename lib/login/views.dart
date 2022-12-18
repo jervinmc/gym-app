@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
                   padding: EdgeInsets.all(20),
                   child: Column(
                       children: <Widget>[
-                        Image.network("https://img.freepik.com/premium-vector/illustration-dumbbell-gym-fitness-barbel-fitness-with-dumbbell-concept-letter-h-logo-design_629524-748.jpg?w=1060",height: 200,),
+                        Image.asset("assets/logo.jpeg",height: 200,),
                         Container(
                           padding: EdgeInsets.only(top: 20),
                           child: TextField(
