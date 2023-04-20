@@ -315,6 +315,41 @@ class _HomeState extends State<Home> {
                           ))),
                 ],
               ),
+              Container(
+                padding: EdgeInsets.only(top:10,bottom: 10),
+              ),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed('/online-exercise',arguments:['Exercises']);
+                    },
+                 child: Container(
+                      height: 85,
+                      width: 350,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: DecorationImage(
+                            colorFilter: new ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken),
+                            image: NetworkImage(
+                                'https://img.freepik.com/free-photo/strong-man-training-gym_1303-23478.jpg?w=1480&t=st=1667744172~exp=1667744772~hmac=3023901a3f8513185a8af3f93da7f1b1d6433b07e0fd58590d314b56a63be1fe'),
+                            fit: BoxFit.cover),
+                      ),
+                      child:
+                          Container(
+                            padding:EdgeInsets.all(15),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children:[
+                                Text('Exercises',style: TextStyle(fontSize:30,color: Colors.white,))
+                              ]
+                            ),
+                          ))),
+                ],
+              ),
             ],
           ))],
         ));

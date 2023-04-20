@@ -82,6 +82,9 @@ flutter:
     - assets/logo.jpg
     - assets/logo.jpeg
     - assets/logo_donate.jpeg
+    - assets/easy/lunges.gif
+    - assets/easy/pushup.gif
+    - assets/easy/squat.gif
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -8,6 +8,7 @@ import 'package:bloodapp/homeFinder/views.dart';
 import 'package:bloodapp/homeInstitution/views.dart';
 import 'package:bloodapp/login/views.dart';
 import 'package:bloodapp/maps/views.dart';
+import 'package:bloodapp/online-exercise/online-exercise.dart';
 import 'package:bloodapp/product_details/views.dart';
 import 'package:bloodapp/products/views.dart';
 import 'package:bloodapp/profile/views.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
               GetPage(name: "/product-details", page:()=>ProductDetails()),
             GetPage(name: "/appointment", page:()=>Appointment()),
            GetPage(name: "/product", page:()=>Product()),
+           GetPage(name: "/online-exercise", page:()=>OnlineExercise()),
       //   GetPage(name: "/home", page:()=>Home()),
       //   GetPage(name: "/details", page:()=>Details()),
       //   GetPage(name: "/cart", page:()=>Carts()),
