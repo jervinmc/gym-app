@@ -157,7 +157,7 @@ class _HomeState extends State<Home> {
                 },
                 child: Icon((Icons.account_circle_outlined)),
               ),
-              Icon((Icons.notifications))
+              // Icon((Icons.notifications))
             ])
           ]),
           backgroundColor: Color(0xff416ce1),
