@@ -32,9 +32,19 @@ class _OnlineExerciseState extends State<OnlineExercise> {
       'image': 'assets/easy/pushup.gif',
     },
     {
-      'title':'3. Squat',
+      'title':'3. Dumbbell Reverse Fly',
+      'description': ' The Dumbbell Reverse Fly is an effective exercise for targeting the muscles in your upper back and shoulders. Its a great way to improve your posture, increase your shoulder mobility, and strengthen your upper body.',
+      'image': 'assets/easy/dumbell-fly.gif',
+    },
+    {
+      'title':'4. Squat',
       'description': 'To perform a squat, stand with your feet hip-width apart and your toes pointing forward or slightly outward. Lower your body by bending your knees and pushing your hips back, keeping your back straight and your core engaged. Lower your body until your thighs are parallel to the ground, and then push through your heels to stand back up to the starting position. Keep your knees aligned with your toes and avoid letting them collapse inward. You can perform squats with bodyweight or with added weight like a barbell or dumbbells. Repeat for 10 to 12 repetitions, or as many as you can do with good form. Always consult with your healthcare provider before starting any new exercise program.',
       'image': 'assets/easy/squat.gif',
+    },
+    {
+      'title':'4. Dumbbell Bicep Curl',
+      'description': 'The Dumbbell Bicep Curl is a classic exercise that targets the biceps, one of the primary muscles in your upper arm. Its a great way to build arm strength, increase muscle tone, and improve your overall fitness level.',
+      'image': 'assets/easy/dumbell-1.gif',
     },
     // {
     //   'description': 'Item 4 description',

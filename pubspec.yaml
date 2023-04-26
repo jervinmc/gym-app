@@ -40,11 +40,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   qr_flutter: ^4.0.0
+  calendar_view: ^1.0.3
   url_launcher: ^6.1.0
   flutter_local_notifications: ^9.4.1
   pusher_websocket_flutter: ^0.1.1
   intl: ^0.17.0
   googleapis: any
+  syncfusion_flutter_calendar: ^19.4.52
   date_time_picker: "^2.1.0"
   googleapis_auth: any
   location: ^2.3.5
@@ -83,7 +85,12 @@ flutter:
     - assets/logo.jpeg
     - assets/logo_donate.jpeg
     - assets/easy/lunges.gif
+    - assets/easy/dumbell-fly.gif
     - assets/easy/pushup.gif
+    - assets/easy/pushup-3d.gif
+    - assets/easy/lunges-gif.gif
+    - assets/easy/squat-3d.gif
+    - assets/easy/dumbell-1.gif
     - assets/easy/squat.gif
   #   - images/a_dot_ham.jpeg
 

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:bloodapp/config/global.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,9 @@ import 'package:date_time_picker/date_time_picker.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:http/http.dart' as http;
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
+DateTime get _now => DateTime.now();
 class Appointment extends StatefulWidget {
   const Appointment({Key? key}) : super(key: key);
 
@@ -25,6 +26,7 @@ class _AppointmentState extends State<Appointment> {
         headers: {"Content-Type": "application/json"},
         body: json.encode(params));
   }
+
 
   @override
   Widget build(BuildContext context) {
