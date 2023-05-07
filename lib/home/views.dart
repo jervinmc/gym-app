@@ -323,7 +323,7 @@ class _HomeState extends State<Home> {
                 children: [
                   InkWell(
                     onTap: (){
-                      Get.toNamed('/online-exercise',arguments:['Exercises']);
+                      Get.toNamed('/category',arguments:['Exercises']);
                     },
                  child: Container(
                       height: 85,

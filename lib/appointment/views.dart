@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 DateTime get _now => DateTime.now();
+
 class Appointment extends StatefulWidget {
   const Appointment({Key? key}) : super(key: key);
 
@@ -18,6 +19,8 @@ class Appointment extends StatefulWidget {
 
 class _AppointmentState extends State<Appointment> {
   static String BASE_URL = '' + Global.url + '/book/';
+  static String CHECK_SLOT = '' + Global.url + '/check-book/';
+  var slot = 0;
   String _selectedDate = '';
 
   appointment() async {
@@ -25,6 +28,25 @@ class _AppointmentState extends State<Appointment> {
     final response = await http.post(Uri.parse(BASE_URL),
         headers: {"Content-Type": "application/json"},
         body: json.encode(params));
+  }
+
+  void checkDate(val) async {
+    var params = {"date": val};
+    final response = await http.post(Uri.parse(CHECK_SLOT),
+        headers: {"Content-Type": "application/json"},
+        body: json.encode(params));
+
+        String jsonsDataString = response.body.toString();
+        final _data = jsonDecode(jsonsDataString);
+        print(_data);
+        int a = int.parse(_data.toString());
+        slot = 50 -  a;
+
+        setState(() {
+          
+        });
+        
+
   }
 
 
@@ -50,7 +72,11 @@ class _AppointmentState extends State<Appointment> {
           icon: Icon(Icons.event),
           dateLabelText: 'Date',
           timeLabelText: "Hour",
-          onChanged: (val) => _selectedDate = val,
+          onChanged: (val) {
+            checkDate(val);
+            print(val);
+            _selectedDate = val;  
+          },
           validator: (val) {
             print(val);
             return null;
@@ -86,6 +112,7 @@ class _AppointmentState extends State<Appointment> {
             },
           ),
         ),
+        Text("Slots: ${slot}")
       ]),
     );
   }

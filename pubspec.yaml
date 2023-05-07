@@ -48,6 +48,7 @@ dependencies:
   googleapis: any
   syncfusion_flutter_calendar: ^19.4.52
   date_time_picker: "^2.1.0"
+  video_player: ^2.5.1
   googleapis_auth: any
   location: ^2.3.5
   google_maps_flutter: ^2.1.3
