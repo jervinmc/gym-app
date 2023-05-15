@@ -77,7 +77,8 @@ class _SignUpState extends State<SignUp> {
       _load = true;
     });
     var params = {
-      "fullname": _fullname.text,
+      "firstname": _firstname.text,
+      "lastname": _lastname.text,
       "user_type": user_type,
       "gender": gender,
       "birthdate": _birthdate.text,
@@ -132,6 +133,8 @@ class _SignUpState extends State<SignUp> {
 
   TextEditingController _email = new TextEditingController();
   TextEditingController _fullname = new TextEditingController();
+  TextEditingController _firstname = new TextEditingController();
+  TextEditingController _lastname = new TextEditingController();
   TextEditingController _birthdate = new TextEditingController();
   TextEditingController _password = new TextEditingController();
   TextEditingController _marital_status = new TextEditingController();
@@ -199,7 +202,7 @@ class _SignUpState extends State<SignUp> {
                             Container(
                               padding: EdgeInsets.only(top: 10),
                               child: TextField(
-                                controller: _fullname,
+                                controller: _firstname,
                                 decoration: InputDecoration(
                                     contentPadding: EdgeInsets.all(8.0),
                                     enabledBorder: OutlineInputBorder(
@@ -215,7 +218,30 @@ class _SignUpState extends State<SignUp> {
                                     filled: true,
                                     hintStyle:
                                         TextStyle(color: Colors.grey[800]),
-                                    hintText: "Fullname",
+                                    hintText: "Firstname",
+                                    fillColor: Colors.white70),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(top: 10),
+                              child: TextField(
+                                controller: _lastname,
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(8.0),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey, width: 1.5),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Color(0xff416ce1), width: 5.0),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    filled: true,
+                                    hintStyle:
+                                        TextStyle(color: Colors.grey[800]),
+                                    hintText: "Lastname",
                                     fillColor: Colors.white70),
                               ),
                             ),
