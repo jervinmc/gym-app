@@ -95,7 +95,7 @@ class _DetailsState extends State<Details> {
       ],
       "note_to_payer": "Contact us for any questions on your order.",
       "redirect_urls": {
-        "return_url": "http://10.0.2.2:8000/api/v1",
+        "return_url": "http://3.112.82.82/payments/",
         "cancel_url": "https://example.com"
       }
     };
