@@ -64,7 +64,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           },
           "description": "This is the payment transaction description.",
           "custom": "EBAY_EMS_90048630024435",
-          "invoice_number": "48787582672",
+          "invoice_number": "48787382672",
           "payment_options": {
             "allowed_payment_method": "INSTANT_FUNDING_SOURCE"
           },
@@ -95,7 +95,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       ],
       "note_to_payer": "Contact us for any questions on your order.",
       "redirect_urls": {
-        "return_url": "http://10.0.2.2:8000/api/v1",
+        "return_url": "http://3.112.82.82/payments/",
         "cancel_url": "https://example.com"
       }
     };
