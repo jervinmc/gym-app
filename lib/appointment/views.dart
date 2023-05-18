@@ -6,6 +6,7 @@ import 'package:date_time_picker/date_time_picker.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 DateTime get _now => DateTime.now();
@@ -24,7 +25,9 @@ class _AppointmentState extends State<Appointment> {
   String _selectedDate = '';
 
   appointment() async {
-    var params = {"appointment_date": _selectedDate, "user_id": 1};
+    final prefs = await SharedPreferences.getInstance();
+    var _id = prefs.getInt("_id");
+    var params = {"appointment_date": _selectedDate, "user_id": _id};
     final response = await http.post(Uri.parse(BASE_URL),
         headers: {"Content-Type": "application/json"},
         body: json.encode(params));
