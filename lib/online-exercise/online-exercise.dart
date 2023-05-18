@@ -5,9 +5,13 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:googleapis/cloudbuild/v1.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+
 import 'package:video_player/video_player.dart';
 import 'dart:async';
 import 'dart:convert';
+
+import 'package:webview_flutter/webview_flutter.dart';
 
 class OnlineExercise extends StatefulWidget {
   dynamic args = Get.arguments;
@@ -17,6 +21,7 @@ class OnlineExercise extends StatefulWidget {
 }
 
 class _OnlineExerciseState extends State<OnlineExercise> {
+  late InAppWebViewController _webViewController;
   List args;
   _OnlineExerciseState(this.args);
   bool _load = false;
@@ -138,69 +143,120 @@ class _OnlineExerciseState extends State<OnlineExercise> {
 
   @override
   Widget build(BuildContext context) {
+     var controller = WebViewController()
+  ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  ..setBackgroundColor(const Color(0x00000000))
+  ..setNavigationDelegate(
+    NavigationDelegate(
+      onProgress: (int progress) {
+        // Update loading bar.
+      },
+      onPageStarted: (String url) {},
+      onPageFinished: (String url) {},
+      onWebResourceError: (WebResourceError error) {},
+      onNavigationRequest: (NavigationRequest request) {
+        if (request.url.startsWith('https://asl-w.netlify.app')) {
+          return NavigationDecision.prevent;
+        }
+        return NavigationDecision.navigate;
+      },
+    ),
+  )
+  ..loadRequest(Uri.parse('https://thewarehousegym3dmodels.com/product/51/'));
     return Scaffold(
         appBar: AppBar(
           title: Text(args[0]),
           backgroundColor: Color(0xff416ce1),
         ),
-        body: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(16.0),
-                    child: Text(
-                      data[index]['title'],
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
+        body: InAppWebView(
+                      initialUrlRequest:URLRequest(url: Uri.parse('https://thewarehousegym3dmodels.com/product/51/')),
+                      initialOptions: InAppWebViewGroupOptions(
+                        crossPlatform: InAppWebViewOptions(
+                          mediaPlaybackRequiresUserGesture: false,
+                          // debuggingEnabled: true,
+                        ),
                       ),
-                    ),
+                      onWebViewCreated: (InAppWebViewController controller) {
+                        _webViewController = controller;
+                      },
+                      androidOnPermissionRequest: (InAppWebViewController controller, String origin, List<String> resources) async {
+                        return PermissionRequestResponse(resources: resources, action: PermissionRequestResponseAction.GRANT);
+                      }
                   ),
-                  Container(
-                    padding: EdgeInsets.all(16.0),
-                    child: Text(
-                      data[index]['description'],
-                      style: TextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  // Container(
-                  //   padding: EdgeInsets.all(16.0),
-                  //   child: Image.asset(
-                  //     data[index]['image'],
-                  //     height: 150.0,
-                  //     width: 150.0,
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // ),
-                  Center(
-                    child: _controller[index].value.isInitialized
-                        ? AspectRatio(
-                            aspectRatio: _controller[index].value.aspectRatio,
-                            child: VideoPlayer(_controller[index]),
-                          )
-                        : Container(),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        _controller[index].value.isPlaying
-                            ? _controller[index].pause()
-                            : _controller[index].play();
-                      });
-                    },
-                    child: Icon(
-                      _controller[index].value.isPlaying
-                          ? Icons.pause
-                          : Icons.play_arrow,
-                    ),
-                  ),
-                ],
-              );
-            }));
+        // body: ListView.builder(
+        //     itemCount: data.length,
+        //     itemBuilder: (BuildContext context, int index) {
+        //       return Column(
+        //         children: [
+        //           Container(
+        //             padding: EdgeInsets.all(16.0),
+        //             child: Text(
+        //               data[index]['title'],
+        //               style: TextStyle(
+        //                 fontSize: 18.0,
+        //                 fontWeight: FontWeight.bold,
+        //               ),
+        //             ),
+        //           ),
+        //           Container(
+        //             padding: EdgeInsets.all(16.0),
+        //             child: Text(
+        //               data[index]['description'],
+        //               style: TextStyle(
+        //                 fontSize: 10.0,
+        //                 fontWeight: FontWeight.bold,
+        //               ),
+        //             ),
+        //           ),
+        //           InAppWebView(
+        //               initialUrlRequest:URLRequest(url: Uri.parse('https://asl-w.netlify.app')),
+        //               initialOptions: InAppWebViewGroupOptions(
+        //                 crossPlatform: InAppWebViewOptions(
+        //                   mediaPlaybackRequiresUserGesture: false,
+        //                   // debuggingEnabled: true,
+        //                 ),
+        //               ),
+        //               onWebViewCreated: (InAppWebViewController controller) {
+        //                 _webViewController = controller;
+        //               },
+        //               androidOnPermissionRequest: (InAppWebViewController controller, String origin, List<String> resources) async {
+        //                 return PermissionRequestResponse(resources: resources, action: PermissionRequestResponseAction.GRANT);
+        //               }
+        //           ),
+        //           // Container(
+        //           //   padding: EdgeInsets.all(16.0),
+        //           //   child: Image.asset(
+        //           //     data[index]['image'],
+        //           //     height: 150.0,
+        //           //     width: 150.0,
+        //           //     fit: BoxFit.cover,
+        //           //   ),
+        //           // ),
+        //           Center(
+        //             child: _controller[index].value.isInitialized
+        //                 ? AspectRatio(
+        //                     aspectRatio: _controller[index].value.aspectRatio,
+        //                     child: VideoPlayer(_controller[index]),
+        //                   )
+        //                 : Container(),
+        //           ),
+        //           InkWell(
+        //             onTap: () {
+        //               setState(() {
+        //                 _controller[index].value.isPlaying
+        //                     ? _controller[index].pause()
+        //                     : _controller[index].play();
+        //               });
+        //             },
+        //             child: Icon(
+        //               _controller[index].value.isPlaying
+        //                   ? Icons.pause
+        //                   : Icons.play_arrow,
+        //             ),
+        //           ),
+        //         ],
+        //       );
+        //     })
+            );
   }
 }
