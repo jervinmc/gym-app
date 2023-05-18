@@ -112,7 +112,8 @@ class _AppointmentState extends State<Appointment> {
             },
           ),
         ),
-        Text("Slots: ${slot}")
+        Text("Slots: ${slot}"),
+        Text("Membership fee: Php 300.00")
       ]),
     );
   }

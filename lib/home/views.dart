@@ -143,6 +143,13 @@ class _HomeState extends State<Home> {
                   Get.toNamed('/appointment');
                 },
               ),
+              ListTile(
+                trailing: Icon(Icons.sell),
+                title: const Text('Transaction'),
+                onTap: () {
+                  Get.toNamed('/transaction');
+                },
+              ),
             ],
           ),
         ),

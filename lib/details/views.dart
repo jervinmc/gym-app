@@ -24,7 +24,7 @@ class _DetailsState extends State<Details> {
     final prefs = await SharedPreferences.getInstance();
     var _id = prefs.getInt("_id");
     var params = {
-      "user_id":1,
+      "user_id":_id,
       "product_id":args[1],
       "quantity":1
     };
@@ -32,6 +32,8 @@ class _DetailsState extends State<Details> {
         Uri.parse(Global.url + '/' + 'transaction/'),
         headers: {"Content-Type": "application/json"},
         body: json.encode(params));
+    
+    print(response123);
     String username =
         "AfhkPCUFnmyofuwN3OSicO7Z83gKoXlDUmba7meh3GewvB6eC1nQ74JrMCSANpYyUudyjEvZBoda-5q-";
     String password =

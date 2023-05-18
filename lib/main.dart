@@ -17,6 +17,7 @@ import 'package:bloodapp/qrscanner/views.dart';
 import 'package:bloodapp/register/views.dart';
 import 'package:bloodapp/register_institution/views.dart';
 import 'package:bloodapp/searchDonor/views.dart';
+import 'package:bloodapp/transaction/views.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/product", page: () => Product()),
         GetPage(name: "/online-exercise", page: () => OnlineExercise()),
         GetPage(name: "/category", page: () => Category()),
+        GetPage(name: "/transaction", page: () => TransactionPage()),
         //   GetPage(name: "/home", page:()=>Home()),
         //   GetPage(name: "/details", page:()=>Details()),
         //   GetPage(name: "/cart", page:()=>Carts()),

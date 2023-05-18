@@ -24,12 +24,12 @@ class _OnlineExerciseState extends State<OnlineExercise> {
   late List<VideoPlayerController> _controller = [];
   final List<Map<String, dynamic>> items = [
     {
-      'title': '1. Squat',
+      'title': '1. Barbell deadlift',
       'description':
           'To perform lunges, start by standing with your feet hip-width apart and take a step forward with your right foot. Lower your left knee to the ground, keeping your right knee at a 90-degree angle and your right thigh parallel to the ground. Push through your right heel to return to the starting position, and repeat with your left foot. Keep your knees aligned with your ankles, your core engaged, and your back straight throughout the exercise. Perform 10 to 12 repetitions on each side, and consult with your healthcare provider before starting any new exercise program.',
       'image': 'assets/easy/lunges.gif',
       'video':
-          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/FabConvert.com_squat.mp4'
+          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/vecteezy_barbell-deadlift-360-degrees-pov-fitness-exercise-workout_23550685_590+(1).mp4'
     },
     {
       'title': '2. Jumping jacks',
@@ -37,7 +37,7 @@ class _OnlineExerciseState extends State<OnlineExercise> {
           'To perform a pushup, start in a plank position with your hands shoulder-width apart, fingers facing forward, and your feet together. Lower your body toward the ground by bending your elbows, keeping your core engaged and your back straight. Lower your chest until it almost touches the ground, and then push back up until your arms are fully extended. Keep your elbows close to your body throughout the exercise, and avoid letting them flare out to the sides. Repeat for 10 to 12 repetitions, or as many as you can do with good form. To modify the exercise, you can perform pushups on your knees or against a wall. Always consult with your healthcare provider before starting any new exercise program.',
       'image': 'assets/easy/pushup.gif',
       'video':
-          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/FabConvert.com_jumping%2Bjacks.mp4'
+          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/vecteezy_briskly-walking-360-degrees-pov-fitness-exercise-workout_23405746_746.mp4'
     },
     // {
     //   'title': '3. Dumbbell Reverse Fly',
@@ -71,20 +71,12 @@ class _OnlineExerciseState extends State<OnlineExercise> {
 
    final List<Map<String, dynamic>> items2 = [
     {
-      'title': '1. High knee',
+      'title': '1. Dumbell scott press',
       'description':
           'To perform lunges, start by standing with your feet hip-width apart and take a step forward with your right foot. Lower your left knee to the ground, keeping your right knee at a 90-degree angle and your right thigh parallel to the ground. Push through your right heel to return to the starting position, and repeat with your left foot. Keep your knees aligned with your ankles, your core engaged, and your back straight throughout the exercise. Perform 10 to 12 repetitions on each side, and consult with your healthcare provider before starting any new exercise program.',
       'image': 'assets/easy/lunges.gif',
       'video':
-          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/FabConvert.com_high%2Bknee.mp4'
-    },
-    {
-      'title': '2. Push up',
-      'description':
-          'To perform a pushup, start in a plank position with your hands shoulder-width apart, fingers facing forward, and your feet together. Lower your body toward the ground by bending your elbows, keeping your core engaged and your back straight. Lower your chest until it almost touches the ground, and then push back up until your arms are fully extended. Keep your elbows close to your body throughout the exercise, and avoid letting them flare out to the sides. Repeat for 10 to 12 repetitions, or as many as you can do with good form. To modify the exercise, you can perform pushups on your knees or against a wall. Always consult with your healthcare provider before starting any new exercise program.',
-      'image': 'assets/easy/pushup.gif',
-      'video':
-          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/FabConvert.com_jumping%2Bjacks.mp4'
+          'https://chatmind.s3.ap-northeast-1.amazonaws.com/Videos/vecteezy_dumbbell-scott-press-360-degrees-fitness-exercise-workout_20766646_283.mp4'
     },
     // {
     //   'title': '3. Dumbbell Reverse Fly',

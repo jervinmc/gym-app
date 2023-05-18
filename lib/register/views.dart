@@ -85,7 +85,7 @@ class _SignUpState extends State<SignUp> {
       "blood_type": bloodtype,
       "marital_status": _marital_status.text,
       "mobile_number": _mobile_number.text,
-      "permanent_address": _permanent_address.text,
+      "address": _permanent_address.text,
       "email": _email.text,
       "password": _password.text,
     };

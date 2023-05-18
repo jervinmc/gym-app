@@ -23,9 +23,15 @@ class _ProductDetailsState extends State<ProductDetails> {
   void paypalCheckout() async {
     final prefs = await SharedPreferences.getInstance();
     var _id = prefs.getInt("_id");
+    var _address = prefs.getString("_address");
+    var _mobile_number = prefs.getString("_mobile_number");
+    var _fullname = prefs.getString("_fullname");
+
+    print("Firstname : ${_fullname}");
+    print("id: ${_id} product : ${args}");
     var params = {
-      "user_id":1,
-      "product_id":args[1],
+      "user_id": _id,
+      "product_id":args[7],
       "quantity":1
     };
     final response123 = await http.post(
@@ -81,14 +87,14 @@ class _ProductDetailsState extends State<ProductDetails> {
               }
             ],
             "shipping_address": {
-              "recipient_name": "Hello World",
+              "recipient_name": "${_fullname}",
               "line1": "4thFloor",
               "line2": "unit#34",
-              "city": "SAn Jose",
-              "country_code": "US",
+              "city": "${_address}",
+              "country_code": "PH",
               "postal_code": "95131",
-              "phone": "011862212345678",
-              "state": "CA"
+              "phone": "${_mobile_number}",
+              "state": "A"
             }
           }
         }

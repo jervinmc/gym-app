@@ -60,7 +60,7 @@ class _ProductState extends State<Product> {
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
               onTap: ()async{
-                  Get.toNamed('/product-details',arguments:["${data[index]['image']}","${data[index]['_id']}","${data[index]['price']}","${data[index]['price']}","${data[index]['stocks']}","${data[index]['description']}","${data[index]['product_name']}"]);
+                  Get.toNamed('/product-details',arguments:["${data[index]['image']}","${data[index]['_id']}","${data[index]['price']}","${data[index]['price']}","${data[index]['stocks']}","${data[index]['description']}","${data[index]['product_name']}","${data[index]['id']}"]);
               },
               child: ProductCard(
                   name: data[index]['product_name'].toString(),

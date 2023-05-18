@@ -74,13 +74,14 @@ class _LoginState extends State<Login> {
     String jsonsDataString1 = response1.body.toString();
     final _data1 = jsonDecode(jsonsDataString1);
     print(_data1);
-    // prefs.setInt('_id', _data[0]['id']);
+    prefs.setInt('_id', _data1[0]['id']);
     prefs.setString('_fullname', "${_data1[0]['firstname']} ${_data1[0]['lastname']}");
     prefs.setString('_mobile_number', "${_data1[0]['mobile_number']}");
     prefs.setString('_gender', "${_data1[0]['gender']}");
     prefs.setString('_birthdate', "${_data1[0]['birthdate']}");
     prefs.setString('_email', "${_data1[0]['email']}");
-
+    prefs.setString('_address', "${_data1[0]['address']}");
+    print("address: ${_data1[0]['address']}");
 
 
     Get.toNamed('/home');
