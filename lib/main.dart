@@ -1,4 +1,5 @@
 import 'package:bloodapp/appointment/views.dart';
+import 'package:bloodapp/attendance/views.dart';
 import 'package:bloodapp/category/views.dart';
 import 'package:bloodapp/details/views.dart';
 import 'package:bloodapp/donation_list/views.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/product-details", page: () => ProductDetails()),
         GetPage(name: "/appointment", page: () => Appointment()),
         GetPage(name: "/product", page: () => Product()),
+        GetPage(name: "/timein", page: () => TimeDisplayComponent()),
         GetPage(name: "/online-exercise", page: () => OnlineExercise()),
         GetPage(name: "/category", page: () => Category()),
         GetPage(name: "/transaction", page: () => TransactionPage()),
